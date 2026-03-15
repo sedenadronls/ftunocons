@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use | Futuno Advisory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <script>
+        tailwind = { config: { theme: { extend: { fontFamily: { sans:['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] }, colors: { brand: { 900: '#050B14', 800: '#0A1325', accent: '#00E5FF' } } } } } }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #050B14; color: #ffffff; }
+        .glass-card { background: rgba(10, 19, 37, 0.4); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-accent selection:text-brand-900 flex flex-col min-h-screen">
+    <nav class="w-full z-50 glass-card py-4 border-b border-white/10">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-serif font-semibold tracking-wide text-white flex flex-col leading-none hover:opacity-80 transition-opacity">
+                <span>FUTUNO</span>
+                <span class="text-[0.65rem] font-sans text-brand-accent tracking-[0.2em] uppercase mt-1">Advisory</span>
+            </a>
+            <a href="index.html" class="text-sm font-medium text-gray-400 hover:text-white transition-colors">← Back to Home</a>
+        </div>
+    </nav>
+    <main class="flex-grow max-w-3xl mx-auto px-6 py-20">
+        <h1 class="text-4xl font-serif font-bold mb-8">Terms of Use</h1>
+        <div class="space-y-6 text-gray-300 leading-relaxed">
+            <p><strong>Independent Research Insights:</strong> All diagnostic frameworks, regulatory mapping articles, and research briefings published by Futuno Advisory are based entirely on publicly available disclosures, documentation, and the text of international regulatory frameworks.</p>
+            <p><strong>No Legal Advice:</strong> Futuno Advisory acts as an independent regulatory intelligence researcher. None of the content, diagnostic reports, or insight briefs provided on this website constitute formal legal advice, nor should they be interpreted as such.</p>
+            <p><strong>Informational Purpose:</strong> The metrics and evaluations presented in any sample diagnostics are simulated environments used for demonstration purposes. Formal compliance requires comprehensive legal and internal audits.</p>
+            <p class="text-xs text-gray-500 mt-12 pt-8 border-t border-gray-800">Last Updated: March 2026</p>
+        </div>
+    </main>
+    <footer class="py-8 text-center text-gray-600 text-sm border-t border-gray-800">&copy; 2026 Futuno Advisory. All rights reserved.</footer>
+</body>
+</html>

@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Added Meta Description for SEO -->
     <meta name="description" content="Futuno Advisory specializes in AI Governance and Regulatory Risk Diagnostics. We help elite enterprises navigate the EU AI Act and secure high-risk algorithmic deployments.">
     <title>Futuno Advisory | AI Governance & Regulatory Risk Diagnostics</title>
     
@@ -21,7 +20,7 @@
                     extend: {
                         fontFamily: {
                             sans: ['Inter', 'sans-serif'],
-                            serif: ['Playfair Display', 'serif'],
+                            serif:['Playfair Display', 'serif'],
                         },
                         colors: {
                             brand: {
@@ -45,7 +44,6 @@
             overflow-x: hidden;
         }
 
-        /* 3D Canvas Background */
         #canvas-container {
             position: fixed;
             top: 0;
@@ -54,10 +52,9 @@
             height: 100vh;
             z-index: -1;
             opacity: 0.6;
-            pointer-events: none; /* Prevents scroll blocking on mobile */
+            pointer-events: none;
         }
 
-        /* Premium Glassmorphism */
         .glass-card {
             background: rgba(10, 19, 37, 0.4);
             backdrop-filter: blur(16px);
@@ -73,7 +70,6 @@
             box-shadow: 0 10px 40px -10px rgba(0, 229, 255, 0.15);
         }
 
-        /* CSS 3D Mockup Styling */
         .mockup-container {
             perspective: 1000px;
         }
@@ -87,7 +83,6 @@
             box-shadow: -20px 20px 30px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(255,255,255,0.05);
         }
 
-        /* @media (hover: hover) limits sticking bugs on touch devices */
         @media (hover: hover) {
             .mockup-container:hover .report-3d {
                 transform: rotateY(0deg) rotateX(0deg);
@@ -100,32 +95,19 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #050B14;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1f2937;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00E5FF;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050B14; }
+        ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00E5FF; }
     </style>
 </head>
 <body class="antialiased selection:bg-brand-accent selection:text-brand-900">
 
-    <!-- 3D Neural WebGL Background -->
     <div id="canvas-container"></div>
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 glass-card border-b-0 py-3">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            
-            <!-- BRAND & LOGO IMPLEMENTATION -->
             <div class="flex items-center space-x-3">
                 <img src="image.png" alt="Futuno Advisory Logo" class="w-10 h-10 object-contain drop-shadow-[0_0_8px_rgba(0,229,255,0.5)]">
                 <div class="text-xl md:text-2xl font-serif font-semibold tracking-wide text-white flex flex-col leading-none">
@@ -134,7 +116,6 @@
                 </div>
             </div>
 
-            <!-- Desktop Nav -->
             <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-300">
                 <a href="#home" class="hover:text-white transition-colors">Home</a>
                 <a href="#methodology" class="hover:text-white transition-colors">Methodology</a>
@@ -144,26 +125,24 @@
             </div>
 
             <div class="hidden md:block">
-                <a href="#contact" class="px-5 py-2 text-sm font-semibold border border-brand-accent text-brand-accent rounded hover:bg-brand-accent hover:text-brand-900 transition-all">
+                <a href="#contact" class="px-6 py-2.5 text-sm font-semibold border border-brand-accent/70 text-brand-accent rounded-md shadow-[0_0_10px_rgba(0,229,255,0.1)] hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] hover:bg-brand-accent hover:text-brand-900 hover:-translate-y-0.5 transition-all duration-300">
                     Request Audit
                 </a>
             </div>
 
-            <!-- Mobile Menu Toggle -->
             <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
                 <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
 
-        <!-- Mobile Nav Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-[#0A1325]/95 backdrop-blur-xl border-t border-gray-800 mt-3 absolute w-full left-0 top-full">
+        <div id="mobile-menu" class="hidden md:hidden bg-[#0A1325]/95 backdrop-blur-xl border-t border-gray-800 mt-3 absolute w-full left-0 top-full shadow-2xl">
             <div class="flex flex-col px-6 py-4 space-y-4 text-sm font-medium text-gray-300">
                 <a href="#home" class="mobile-link hover:text-white transition-colors">Home</a>
                 <a href="#methodology" class="mobile-link hover:text-white transition-colors">Methodology</a>
                 <a href="#report" class="mobile-link hover:text-white transition-colors">Diagnostic Report</a>
                 <a href="#about" class="mobile-link hover:text-white transition-colors">Research</a>
                 <a href="#contact" class="mobile-link hover:text-white transition-colors">Contact</a>
-                <a href="#contact" class="mobile-link text-center mt-4 px-5 py-3 border border-brand-accent text-brand-accent rounded hover:bg-brand-accent hover:text-brand-900 transition-all">
+                <a href="#contact" class="mobile-link text-center mt-4 px-6 py-3 border border-brand-accent/70 text-brand-accent rounded-md shadow-[0_0_10px_rgba(0,229,255,0.1)] hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] hover:bg-brand-accent hover:text-brand-900 transition-all duration-300">
                     Request Audit
                 </a>
             </div>
@@ -184,17 +163,30 @@
                 Specialized compliance and strategy for high-risk AI systems. We navigate the complexities of the <strong>EU AI Act</strong> to bulletproof your algorithmic deployments.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#report" class="px-8 py-4 bg-blue text-brand-900 font-semibold rounded hover:bg-gray-200 transition-all">
+                <a href="#report" class="px-8 py-4 bg-blue text-brand-900 font-semibold rounded-md shadow-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:bg-gray-100 hover:-translate-y-1 transition-all duration-300">
                     View Diagnostic Report
                 </a>
-                <a href="#methodology" class="px-8 py-4 glass-card font-semibold rounded text-white hover:text-brand-accent transition-all">
+                <a href="#methodology" class="px-8 py-4 glass-card font-semibold rounded-md text-white border border-white/10 hover:border-brand-accent/40 hover:text-brand-accent hover:-translate-y-1 transition-all duration-300">
                     Explore Methodology
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 2. Methodology Section -->
+    <!-- NEW ADDITION: SECTION 8 — CREDIBILITY SIGNALS -->
+    <section class="py-10 border-b border-t border-gray-800 bg-[#02050A]/80 backdrop-blur-md relative z-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row flex-wrap justify-center items-center gap-4 lg:gap-6">
+                <span class="text-xs font-semibold text-gray-500 uppercase tracking-widest md:mr-4">Diagnostic Framework:</span>
+                <div class="glass-card px-5 py-2.5 rounded text-[0.8rem] font-medium text-gray-300 shadow-sm border border-brand-accent/20 hover:text-brand-accent transition-colors">EU AI Act Regulatory Mapping</div>
+                <div class="glass-card px-5 py-2.5 rounded text-[0.8rem] font-medium text-gray-300 shadow-sm border border-brand-accent/20 hover:text-brand-accent transition-colors">Governance Gap Analysis</div>
+                <div class="glass-card px-5 py-2.5 rounded text-[0.8rem] font-medium text-gray-300 shadow-sm border border-brand-accent/20 hover:text-brand-accent transition-colors">Algorithmic Transparency Review</div>
+                <div class="glass-card px-5 py-2.5 rounded text-[0.8rem] font-medium text-gray-300 shadow-sm border border-brand-accent/20 hover:text-brand-accent transition-colors">Post-Market Monitoring Assessment</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Methodology Section (Existing) -->
     <section id="methodology" class="py-24 relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="mb-16">
@@ -213,7 +205,6 @@
                     <h3 class="text-xl font-semibold mb-3 text-white">Regulatory Article Mapping</h3>
                     <p class="text-sm text-gray-400 leading-relaxed">Precision alignment with EU AI Act mandates, transforming dense legal texts into actionable engineering protocols.</p>
                 </div>
-
                 <!-- Pillar 2 -->
                 <div class="glass-card p-8 rounded-xl relative overflow-hidden group">
                     <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl font-bold group-hover:text-brand-accent transition-colors">02</div>
@@ -223,7 +214,6 @@
                     <h3 class="text-xl font-semibold mb-3 text-white">AI Risk Governance</h3>
                     <p class="text-sm text-gray-400 leading-relaxed">Development of executive-level risk mitigation frameworks, focusing on data hygiene, bias limits, and systemic accountability.</p>
                 </div>
-
                 <!-- Pillar 3 -->
                 <div class="glass-card p-8 rounded-xl relative overflow-hidden group">
                     <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl font-bold group-hover:text-brand-accent transition-colors">03</div>
@@ -233,7 +223,6 @@
                     <h3 class="text-xl font-semibold mb-3 text-white">Algorithmic Transparency</h3>
                     <p class="text-sm text-gray-400 leading-relaxed">Deep-dive model interpretability profiling to ensure algorithmic decision-making can be audited and understood by regulators.</p>
                 </div>
-
                 <!-- Pillar 4 -->
                 <div class="glass-card p-8 rounded-xl relative overflow-hidden group">
                     <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl font-bold group-hover:text-brand-accent transition-colors">04</div>
@@ -247,11 +236,42 @@
         </div>
     </section>
 
-    <!-- 3. Sample Report Page / Section -->
+    <!-- NEW ADDITION: SECTION 4 — HOW THE DIAGNOSTIC WORKS -->
+    <section class="py-24 relative z-10 bg-gradient-to-b from-[#050B14] to-brand-800/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 font-serif">How the Diagnostic Works</h2>
+                <div class="h-1 w-20 bg-brand-accent mx-auto mb-6"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-8 rounded-xl border-t-4 border-t-brand-accent/50 hover:border-t-brand-accent hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,229,255,0.1)] transition-all duration-300">
+                    <div class="text-4xl font-serif font-bold text-white/20 mb-4">1.</div>
+                    <h3 class="text-lg font-semibold mb-2 text-white">Regulatory Mapping</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">AI systems are mapped against relevant regulatory frameworks including the EU AI Act and related governance standards.</p>
+                </div>
+                <div class="glass-card p-8 rounded-xl border-t-4 border-t-brand-accent/50 hover:border-t-brand-accent hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,229,255,0.1)] transition-all duration-300">
+                    <div class="text-4xl font-serif font-bold text-white/20 mb-4">2.</div>
+                    <h3 class="text-lg font-semibold mb-2 text-white">Governance Gap Analysis</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Public documentation and system architecture disclosures are analyzed to identify potential governance and compliance gaps.</p>
+                </div>
+                <div class="glass-card p-8 rounded-xl border-t-4 border-t-brand-accent/50 hover:border-t-brand-accent hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,229,255,0.1)] transition-all duration-300">
+                    <div class="text-4xl font-serif font-bold text-white/20 mb-4">3.</div>
+                    <h3 class="text-lg font-semibold mb-2 text-white">Risk Exposure Assessment</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Potential operational, regulatory, and reputational risks are evaluated based on system classification and regulatory obligations.</p>
+                </div>
+                <div class="glass-card p-8 rounded-xl border-t-4 border-t-brand-accent/50 hover:border-t-brand-accent hover:-translate-y-2 hover:shadow-[0_15px_30px_rgba(0,229,255,0.1)] transition-all duration-300">
+                    <div class="text-4xl font-serif font-bold text-white/20 mb-4">4.</div>
+                    <h3 class="text-lg font-semibold mb-2 text-white">Strategic Diagnostic Report</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Findings are translated into an executive-level diagnostic outlining exposure areas and potential governance improvements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Sample Report Page / Section (Existing) -->
     <section id="report" class="py-24 relative z-10 bg-gradient-to-b from-transparent to-brand-800/80">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                
                 <!-- 3D Simulated Mockup -->
                 <div class="mockup-container w-full h-[500px] flex items-center justify-center">
                     <div class="report-3d w-full max-w-sm h-[400px] rounded-lg p-8 relative flex flex-col justify-between cursor-pointer">
@@ -295,7 +315,6 @@
                     <p class="text-gray-400 mb-8 leading-relaxed">
                         Our reports translate complex regulatory risk into clear, board-level strategic directives. Download our sample overview to see how we decode algorithmic liabilities into technical remediation steps.
                     </p>
-                    
                     <div class="space-y-4 mb-8">
                         <div class="glass-card p-5 rounded-lg border-l-4 border-l-brand-accent">
                             <h4 class="font-semibold text-white mb-1">Executive Summary Generation</h4>
@@ -310,8 +329,7 @@
                             <p class="text-sm text-gray-400">Specific data engineering and human-in-the-loop protocols to achieve certification.</p>
                         </div>
                     </div>
-
-                    <a href="#" class="inline-flex items-center space-x-2 px-6 py-3 bg-brand-accent text-brand-900 font-semibold rounded hover:bg-white transition-colors">
+                    <a href="#" class="inline-flex items-center space-x-2 px-7 py-3.5 bg-brand-accent text-brand-900 font-semibold rounded-md shadow-[0_0_15px_rgba(0,229,255,0.3)] hover:shadow-[0_0_25px_rgba(0,229,255,0.5)] hover:bg-[#00F0FF] hover:-translate-y-0.5 transition-all duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                         <span>Download Sample PDF</span>
                     </a>
@@ -320,7 +338,48 @@
         </div>
     </section>
 
-    <!-- 4. About / Research -->
+    <!-- NEW ADDITION: SECTION 5 — SAMPLE DIAGNOSTIC PREVIEW -->
+    <section class="py-20 relative z-10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 font-serif">Sample Diagnostic Report</h2>
+            <p class="text-gray-400 mb-10 text-lg">Explore an example of our independent regulatory diagnostic framework applied to a high-risk AI system context.</p>
+            
+            <div class="glass-card p-8 md:p-10 rounded-2xl flex flex-col md:flex-row items-center justify-between text-left border border-white/10 shadow-[0_15px_40px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_50px_rgba(0,229,255,0.15)] hover:border-brand-accent/30 transition-all duration-500 group">
+                <div class="mb-6 md:mb-0 md:mr-8 flex-1">
+                    <div class="flex items-center space-x-2 text-xs text-brand-accent font-mono mb-3 uppercase tracking-widest">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        <span>PDF PREVIEW</span>
+                    </div>
+                    <h4 class="text-xl font-semibold text-white mb-2">High-Risk System Diagnostic Framework</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">A comprehensive independent evaluation highlighting key exposure areas, model drift vulnerabilities, and compliance readiness.</p>
+                </div>
+                <a href="#" class="whitespace-nowrap px-7 py-3 bg-white/5 border border-brand-accent/50 text-brand-accent font-semibold rounded-md shadow-[0_0_15px_rgba(0,229,255,0.05)] hover:shadow-[0_0_20px_rgba(0,229,255,0.3)] hover:bg-brand-accent hover:text-brand-900 group-hover:-translate-y-1 transition-all duration-300">
+                    View Sample Diagnostic
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW ADDITION: SECTION 3 — INDEPENDENT REGULATORY DIAGNOSTIC WORDING -->
+    <section class="py-20 relative z-10 bg-brand-800/20 border-y border-white/5">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-serif font-bold mb-8 text-white">Independent Regulatory Diagnostics</h2>
+            <div class="glass-card p-8 md:p-10 rounded-xl border-l-4 border-l-brand-accent text-left shadow-lg relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-brand-accent/5 rounded-full blur-[40px]"></div>
+                <p class="text-gray-300 leading-relaxed mb-5 text-lg">
+                    Futuno Advisory conducts independent regulatory diagnostics designed to identify potential governance and compliance exposure areas in AI systems.
+                </p>
+                <p class="text-gray-300 leading-relaxed mb-5 text-lg">
+                    These diagnostics are based on publicly available technical documentation, regulatory frameworks, and corporate disclosures.
+                </p>
+                <p class="text-white font-medium leading-relaxed text-lg border-t border-white/10 pt-5 mt-5">
+                    They provide organizations with a <span class="text-brand-accent drop-shadow-[0_0_5px_rgba(0,229,255,0.4)]">strategic perspective on potential regulatory exposure under emerging AI governance regimes.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. About / Research (Existing) -->
     <section id="about" class="py-24 relative z-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
@@ -330,7 +389,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div class="glass-card p-10 rounded-xl">
-                    <div class="text-4xl font-bold text-white mb-2">150+</div>
+                    <div class="text-4xl font-bold text-white mb-2"><100</div>
                     <div class="text-sm text-brand-accent uppercase tracking-wider mb-4 font-semibold">Models Audited</div>
                     <p class="text-gray-400 text-sm">We've pioneered diagnostic frameworks on generative and discriminative AI models across global enterprise deployments.</p>
                 </div>
@@ -350,7 +409,107 @@
         </div>
     </section>
 
-    <!-- 5. Contact Section -->
+    <!-- NEW ADDITION: SECTION 1 — ABOUT FUTUNO ADVISORY -->
+    <section class="py-20 relative z-10 bg-[#040811]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+                <div class="lg:col-span-8">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 font-serif">About Futuno Advisory</h2>
+                    <div class="h-1 w-20 bg-brand-accent mb-10"></div>
+                    <ul class="space-y-6 text-gray-300 leading-relaxed text-lg">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-brand-accent mr-4 mt-1 shrink-0 drop-shadow-[0_0_5px_rgba(0,229,255,0.4)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Futuno Advisory is an <strong>independent research-driven advisory</strong>.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-brand-accent mr-4 mt-1 shrink-0 drop-shadow-[0_0_5px_rgba(0,229,255,0.4)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Focused on <strong>AI governance, regulatory risk diagnostics, and emerging AI regulation frameworks</strong>.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-brand-accent mr-4 mt-1 shrink-0 drop-shadow-[0_0_5px_rgba(0,229,255,0.4)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Translates <strong>complex regulatory systems into strategic operational guidance</strong>.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-brand-accent mr-4 mt-1 shrink-0 drop-shadow-[0_0_5px_rgba(0,229,255,0.4)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Conducts <strong>independent regulatory diagnostics based on public disclosures and technical documentation</strong>.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-4">
+                    <div class="glass-card p-8 rounded-xl h-full flex flex-col justify-center relative overflow-hidden group hover:shadow-[0_15px_30px_rgba(0,0,0,0.5)] transition-all duration-300">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 blur-[40px] rounded-full group-hover:bg-brand-accent/20 transition-all duration-500"></div>
+                        <h3 class="text-xs text-brand-accent uppercase tracking-widest mb-4 font-semibold">Founder</h3>
+                        <h4 class="text-3xl font-serif text-white mb-2">AYUSH YADAV</h4>
+                        <p class="text-gray-300 text-sm font-medium mb-5">Independent AI Governance Researcher<br>Founder, Futuno Advisory</p>
+                        <div class="w-full h-px bg-white/10 mb-5"></div>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            The firm conducts <strong>independent regulatory diagnostics across AI systems to identify potential governance and compliance exposure areas.</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW ADDITION: SECTION 2 — RESEARCH / INSIGHTS -->
+    <section class="py-24 relative z-10 bg-gradient-to-t from-brand-900/50 to-transparent">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 font-serif">Research & Insights</h2>
+                <div class="h-1 w-20 bg-brand-accent mb-6"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Brief 1 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col h-full hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(0,229,255,0.1)] transition-all duration-300 border border-white/5 hover:border-brand-accent/30">
+                    <h3 class="text-xl font-semibold text-white mb-4 leading-snug">EU AI Act Risk Landscape for AI Startups</h3>
+                    <p class="text-sm text-gray-400 flex-grow mb-8 leading-relaxed">Early-stage AI companies face increasing regulatory exposure under the EU AI Act. This brief examines the governance structures startups must build to maintain European market access.</p>
+                    <a href="#" class="text-brand-accent font-medium text-sm flex items-center hover:text-white transition-colors group">
+                        Read Brief 
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+                <!-- Brief 2 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col h-full hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(0,229,255,0.1)] transition-all duration-300 border border-white/5 hover:border-brand-accent/30">
+                    <h3 class="text-xl font-semibold text-white mb-4 leading-snug">Algorithmic Transparency in High-Risk AI Systems</h3>
+                    <p class="text-sm text-gray-400 flex-grow mb-8 leading-relaxed">Transparency obligations under Articles 13 and 14 of the EU AI Act require structured documentation and explainability frameworks. This brief explores emerging implementation strategies.</p>
+                    <a href="#" class="text-brand-accent font-medium text-sm flex items-center hover:text-white transition-colors group">
+                        Read Brief 
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+                <!-- Brief 3 -->
+                <div class="glass-card p-8 rounded-xl flex flex-col h-full hover:-translate-y-2 hover:shadow-[0_15px_40px_rgba(0,229,255,0.1)] transition-all duration-300 border border-white/5 hover:border-brand-accent/30">
+                    <h3 class="text-xl font-semibold text-white mb-4 leading-snug">Post-Market Monitoring for AI Systems</h3>
+                    <p class="text-sm text-gray-400 flex-grow mb-8 leading-relaxed">Continuous monitoring and model drift detection are core obligations for high-risk AI providers. This brief outlines governance architectures for sustainable compliance.</p>
+                    <a href="#" class="text-brand-accent font-medium text-sm flex items-center hover:text-white transition-colors group">
+                        Read Brief 
+                        <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW ADDITION: SECTION 6 — CTA -->
+    <section class="py-20 relative z-10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="glass-card p-12 md:p-16 rounded-3xl relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-brand-accent/10">
+                <div class="absolute inset-0 bg-gradient-to-b from-brand-accent/5 to-transparent pointer-events-none"></div>
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-brand-accent/10 rounded-full blur-[60px]"></div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 font-serif text-white">Request a Diagnostic Review</h2>
+                    <p class="text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                        Organizations deploying AI systems in regulated environments may benefit from an independent regulatory diagnostic.
+                    </p>
+                    <a href="#contact" class="inline-block px-10 py-4 bg-brand-accent text-brand-900 font-bold rounded-md shadow-[0_0_20px_rgba(0,229,255,0.3)] hover:shadow-[0_0_35px_rgba(0,229,255,0.6)] hover:bg-[#00F0FF] hover:-translate-y-1 transition-all duration-300">
+                        Request Diagnostic Review
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Contact Section (Existing) -->
     <section id="contact" class="py-24 relative z-10 border-t border-gray-800 bg-brand-900/50">
         <div class="max-w-3xl mx-auto px-6 text-center">
             <h2 class="text-3xl font-serif font-bold mb-6">Initiate Diagnostic Audit</h2>
@@ -369,11 +528,48 @@
         </div>
     </section>
 
-    <footer class="py-8 text-center text-gray-600 text-sm border-t border-gray-800 relative z-10">
-        <p>&copy; 2026 Futuno Advisory. All rights reserved.</p>
+    <!-- NEW ADDITION: SECTION 7 — LEGAL DISCLAIMER -->
+    <section class="py-10 relative z-10 bg-[#020408] border-t border-gray-800/60">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h5 class="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Diagnostic Disclaimer</h5>
+            <p class="text-[0.7rem] text-gray-600 leading-relaxed mb-2 max-w-3xl mx-auto">
+                The diagnostics published by Futuno Advisory are independent research-based assessments conducted using publicly available information and regulatory frameworks.
+            </p>
+            <p class="text-[0.7rem] text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                These diagnostics are intended to highlight potential regulatory exposure areas and do not constitute formal legal advice or an official regulatory compliance audit.
+            </p>
+        </div>
+    </section>
+
+    <!-- ENHANCED ADDITION: SECTION 9 — PREMIUM 3D FOOTER -->
+    <footer class="relative z-10 bg-gradient-to-t from-[#010204] to-[#040811] py-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="glass-card p-10 rounded-2xl flex flex-col md:flex-row justify-between items-center shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/5 mb-10">
+                <div class="mb-8 md:mb-0 text-center md:text-left">
+                    <h4 class="text-2xl font-serif text-white font-semibold tracking-wide mb-2 drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]">Futuno Advisory</h4>
+                    <p class="text-brand-accent text-xs font-mono uppercase tracking-widest">AI Governance & Regulatory Risk Diagnostics</p>
+                </div>
+                <div class="text-center md:text-right flex flex-col space-y-3">
+                    <span class="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-1">Contact</span>
+                    <a href="mailto:research@futunoadvisory.com" class="text-gray-300 font-medium hover:text-brand-accent hover:drop-shadow-[0_0_8px_rgba(0,229,255,0.8)] transition-all duration-300">research@futunoadvisory.com</a>
+                    <a href="http://www.futunoadvisory.com" class="text-gray-300 font-medium hover:text-brand-accent hover:drop-shadow-[0_0_8px_rgba(0,229,255,0.8)] transition-all duration-300">www.futunoadvisory.com</a>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row justify-between items-center text-gray-600 text-sm">
+                <!-- Original structure kept inside the new footer -->
+                <p>&copy; 2026 Futuno Advisory. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0 font-medium text-xs uppercase tracking-wider">
+                    <a href="privacy.html" class="hover:text-brand-accent transition-colors">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-brand-accent transition-colors">Terms of Use</a>
+                </div>
+            </div>
+
+        </div>
     </footer>
 
-    <!-- JS Mobile Menu Logic -->
+    <!-- JS Mobile Menu Logic (Existing) -->
     <script>
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
@@ -390,26 +586,22 @@
         });
     </script>
 
-    <!-- Refactored Three.js 3D Background Logic -->
+    <!-- Refactored Three.js 3D Background Logic (Existing) -->
     <script>
         const init3DBackground = () => {
             const container = document.getElementById('canvas-container');
             
-            // Scene setup
             const scene = new THREE.Scene();
             scene.fog = new THREE.FogExp2(0x050B14, 0.0015);
 
-            // Camera setup
             const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
             camera.position.z = 40;
 
-            // Renderer setup
             const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel ratio for performance
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
             container.appendChild(renderer.domElement);
 
-            // Geometry - Neural Nodes
             const particleCount = 200;
             const geometry = new THREE.BufferGeometry();
             const positions = new Float32Array(particleCount * 3);
@@ -438,9 +630,8 @@
             const particles = new THREE.Points(geometry, material);
             scene.add(particles);
 
-            // --- FIXED: Pre-allocated Buffer for Line Connections (Prevents Memory Leak) ---
-            const maxConnections = 2500; // Hard limit for safety
-            const linePositions = new Float32Array(maxConnections * 6); // 2 vertices per line, 3 coords each
+            const maxConnections = 2500; 
+            const linePositions = new Float32Array(maxConnections * 6);
             const lineGeometry = new THREE.BufferGeometry();
             lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
             lineGeometry.setDrawRange(0, 0);
@@ -453,7 +644,6 @@
             const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
             scene.add(lines);
 
-            // Floating 3D Geometric Object
             const coreGeometry = new THREE.IcosahedronGeometry(12, 1);
             const coreMaterial = new THREE.MeshBasicMaterial({
                 color: 0x00E5FF,
@@ -465,7 +655,6 @@
             coreMesh.position.set(25, 5, -10);
             scene.add(coreMesh);
 
-            // Mouse and Touch Interaction
             let mouseX = 0;
             let mouseY = 0;
             let targetX = 0;
@@ -483,14 +672,12 @@
                 }
             });
 
-            // Resize handler
             window.addEventListener('resize', () => {
                 camera.aspect = window.innerWidth / window.innerHeight;
                 camera.updateProjectionMatrix();
                 renderer.setSize(window.innerWidth, window.innerHeight);
             });
 
-            // Animation Loop
             const animate = () => {
                 requestAnimationFrame(animate);
 
@@ -524,7 +711,6 @@
 
                     posAttribute.setXYZ(i, px, py, pz);
 
-                    // Dynamic Connections with pre-allocated array logic
                     for (let j = i + 1; j < particleCount; j++) {
                         let px2 = posAttribute.getX(j);
                         let py2 = posAttribute.getY(j);
@@ -547,8 +733,6 @@
                 }
 
                 posAttribute.needsUpdate = true;
-                
-                // --- FIXED: Only update exactly the connected vertices without re-instantiation ---
                 lineGeometry.setDrawRange(0, vertexIndex / 3);
                 lineGeometry.attributes.position.needsUpdate = true;
 
